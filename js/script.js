@@ -35,4 +35,17 @@ function setUpDivs() {
     addIndividualDivs();
 }
 
-window.onload(setUpDivs())
+window.onload = setUpDivs();
+
+// Clear grid button
+let resetButton = document.querySelector("#reset");
+resetButton.addEventListener('click', resetGrid)
+
+function resetGrid() {
+    let individualDivNodeList = document.querySelectorAll('.individual-div');
+    individualDivNodeList.forEach( (individualDiv) => {
+        individualDiv.classList.remove('activated')
+    } )
+}
+
+
