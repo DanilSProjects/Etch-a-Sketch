@@ -31,7 +31,7 @@
     background-color: #000000;
 }
 
-/* Styling for grid slider */
+/* Styling for grid slider and colour buttons */
 #slider-container {
     display: flex;
     flex-direction: column;
@@ -39,4 +39,11 @@
 
 #grid-slider {
     width: 25%;
+}
+
+.colour-button {
+    border:0;
+    border-radius: 10px;
+    width: 50px;
+    height: 25px;
 }

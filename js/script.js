@@ -1,4 +1,5 @@
 let mainContainerSide = 16;
+let paintColour = "black";
 
 // Add row divs/flex containers to house individual divs
 function addRowDivs() {
@@ -26,7 +27,7 @@ function addIndividualDivs() {
 
 // Turn divs black when moused over
 function hover(div) {
-    div.classList.add('activated');
+    div.style.backgroundColor = paintColour;
 }
 
 function clearDivs() {
@@ -52,7 +53,7 @@ resetButton.addEventListener('click', resetGrid);
 function resetGrid() {
     let individualDivNodeList = document.querySelectorAll('.individual-div');
     individualDivNodeList.forEach( (individualDiv) => {
-        individualDiv.classList.remove('activated')
+        individualDiv.style.backgroundColor = "white";
     } )
 }
 
@@ -67,3 +68,13 @@ gridSlider.addEventListener('input', () => {
 
     sliderLabel.textContent = `The grid is currently ${gridSlider.value} x ${gridSlider.value} squares.`;
 });
+
+// Change colour of hover with buttons
+
+let colourButtons = document.querySelectorAll(".colour-button");
+colourButtons.forEach( (button) => {
+    button.style.backgroundColor = button.getAttribute('id');
+    button.addEventListener('click', (e) => {
+        paintColour = e.target.id;
+    })
+})
