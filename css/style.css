@@ -3,7 +3,10 @@
 #main-container {
     border: 5px solid goldenrod;
     border-radius: 5px;
-    display: inline-block;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
 }
 
 .row-div,
@@ -13,17 +16,27 @@
 
 .row-div {
     display: flex;
+    flex: 1 1 auto;
 }
 
 /* Styling for individual divs themselves */
 
 .individual-div {
-    border: 2px solid black;
-    height: 24px;
-    width: 24px;
+    border: 1px solid black;
+    flex: 1 1 auto;
 }
 
 /* Styling for when each div is moused over */
 .activated {
     background-color: #000000;
+}
+
+/* Styling for grid slider */
+#slider-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#grid-slider {
+    width: 25%;
 }

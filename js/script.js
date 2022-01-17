@@ -29,6 +29,14 @@ function hover(div) {
     div.classList.add('activated');
 }
 
+function clearDivs() {
+    let mainContainer = document.querySelector('#main-container');
+    let rowDivNodeList = document.querySelectorAll('.row-div');
+    rowDivNodeList.forEach( (rowDiv) => {
+        mainContainer.removeChild(rowDiv);
+    })
+}
+
 // Set up the main container with the two div functions
 function setUpDivs() {
     addRowDivs();
@@ -39,7 +47,7 @@ window.onload = setUpDivs();
 
 // Clear grid button
 let resetButton = document.querySelector("#reset");
-resetButton.addEventListener('click', resetGrid)
+resetButton.addEventListener('click', resetGrid);
 
 function resetGrid() {
     let individualDivNodeList = document.querySelectorAll('.individual-div');
@@ -48,4 +56,14 @@ function resetGrid() {
     } )
 }
 
+// Grid slider changes label + grid itself
+let sliderLabel = document.querySelector('#slider-label')
+let gridSlider = document.querySelector('#grid-slider');
 
+gridSlider.addEventListener('input', () => {
+    mainContainerSide = gridSlider.value;
+    clearDivs();
+    setUpDivs();
+
+    sliderLabel.textContent = `The grid is currently ${gridSlider.value} x ${gridSlider.value} squares.`;
+});
