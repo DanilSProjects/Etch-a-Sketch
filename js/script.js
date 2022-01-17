@@ -20,6 +20,7 @@ function addIndividualDivs() {
         for (let i = 1; i <= mainContainerSide; i++) {
             let individualDiv = document.createElement('div');
             individualDiv.classList.add('individual-div');
+            individualDiv.style.backgroundColor = "white";
             individualDiv.setAttribute(paintMethod, 'hover(this)')
             rowDiv.appendChild(individualDiv);
         }
