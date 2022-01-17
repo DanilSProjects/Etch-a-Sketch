@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Etch-a-Sketch</title>
+        <title>LAE '22</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./css/style.css">
         <script src="./js/script.js" defer></script>
     </head>
     <body>
-        <h1>Etch-a-Sketch</h1>
-        <div id="main-container"></div>
-        <button id="reset">Clear grid</button>
-        <div id="slider-container">
-            <label id="slider-label" for="grid-slider">The grid is currently 16 x 16 squares.</label>
-            <input type="range" min="8" max="64" value="16" id="grid-slider">
-        </div>
-        <div id="colours-container">
-            <button id="black" class="colour-button"></button>
-            <button id="red" class="colour-button"></button>
-            <button id="green" class="colour-button"></button>
-            <button id="blue" class="colour-button"></button>
-            <button id="white" class="eraser colour-button">Eraser</button>
-        </div>
-        <div id="paint-methods">
-            <input type="radio" class="radio" id="mouse-over" name="paint-method" value="onmouseenter" checked="true">
-            <label for="mouse-over">Mouse over</label>
-            <input type="radio" class="radio" id="click" name="paint-method" value="onclick">
-            <label for="click">Click</label>
+        <div id="flex-container">
+            <h1>Ludwigshafen Art Exhibition 2022</h1>
+            <p>Welcome to Ludwigshafen Art Exhibition 2022.</p>
+            <p>This is the place where you not only view the most meaningful, thoughtful
+            and <s>vapid</s> vogue pieces from our local artisan creators, but also create your own. Wield the brush and unleash
+            your creative spirit onto the canvas. </p>
+            <p>Experiment. Live. Thrive. in the canvas.
+            </p>
+            <div id="main-container"></div>
+            <div id="grid-layout-options">
+                <button id="reset">Clear grid</button>
+                <div id="slider-container">
+                    <label id="slider-label" for="grid-slider">The grid is currently 16 x 16 squares.</label>
+                    <input type="range" min="8" max="64" value="16" id="grid-slider">
+                </div>
+            </div>
+            <div id="colours-container">
+                <button id="black" class="colour-button"></button>
+                <button id="red" class="colour-button"></button>
+                <button id="green" class="colour-button"></button>
+                <button id="blue" class="colour-button"></button>
+                <button id="white" class="eraser colour-button">Eraser</button>
+            </div>
+            <div id="paint-methods">
+                <input type="radio" class="radio" id="mouse-over" name="paint-method" value="onmouseenter" checked="true">
+                <label for="mouse-over">Mouse over</label>
+                <input type="radio" class="radio" id="click" name="paint-method" value="onclick">
+                <label for="click">Click</label>
+            </div>
         </div>
     </body>
 </html>

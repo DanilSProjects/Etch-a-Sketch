@@ -1,6 +1,57 @@
-/* Styling for the containers of individual divs*/
+/* Universal styling */
+@font-face {
+    font-family: Arthead;
+    src: url(../fonts/Arthead-Regular\ FREE.otf);
+}
 
+@font-face {
+    font-family: "NEXT ART";
+    src: url(../fonts/NEXT\ ART_Regular.otf);
+}
+
+@font-face {
+    font-family: "NEXT ART";
+    src: url(../fonts/NEXT\ ART_Bold.otf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "NEXT ART";
+    src: url(../fonts/NEXT\ ART_Light.otf);
+    font-weight: lighter;
+}
+
+body {
+    background: linear-gradient(10deg, rgb(0, 0, 0, 0.5), rgba(255, 255, 255, 0.4)), url(../images/background.jpg) no-repeat;
+    background-size: cover;
+    font-family: "NEXT ART";
+}
+
+button {
+    font-family: "NEXT ART";
+}
+
+#flex-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for intro */
+
+h1 {
+    font-family: "NEXT ART";
+    font-weight: bold;
+}
+
+p {
+    margin: 20px 20%;
+}
+
+/* Styling for the containers of individual divs*/
 #main-container {
+    margin-top: 20px;
     border: 5px solid goldenrod;
     border-radius: 5px;
     height: 500px;
@@ -22,7 +73,6 @@
 /* Styling for individual divs themselves */
 
 .individual-div {
-    border: 1px solid black;
     flex: 1 1 auto;
 }
 
@@ -31,24 +81,43 @@
     background-color: #000000;
 }
 
-/* Styling for grid slider and colour buttons */
+/* Styling for grid slider */
+#grid-layout-options {
+    display: flex;
+    margin: 20px 0px;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+}
+
 #slider-container {
     display: flex;
     flex-direction: column;
+    margin-left: 50px;
 }
 
-#grid-slider {
-    width: 25%;
-}
-
+/* Styling for colour buttons */
 #colours-container {
     display: flex;
+    margin-bottom: 20px;
 }
 
 .colour-button {
     border:2px solid goldenrod;
     border-radius: 10px;
-    width: 50px;
-    height: 25px;
     margin-right: 10px;
+    padding: 25px 50px;
+}
+
+/* Styling for clear + radio buttons */
+#paint-methods {
+    color:#ffffff;
+    margin-bottom: 25px;
+}
+
+#reset {
+    border:2px solid goldenrod;
+    border-radius: 10px;
+    background-color: white;
+    padding: 15px 25px;
 }
