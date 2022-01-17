@@ -1,5 +1,6 @@
 let mainContainerSide = 16;
 let paintColour = "black";
+let paintMethod = "onmouseenter";
 
 // Add row divs/flex containers to house individual divs
 function addRowDivs() {
@@ -19,7 +20,7 @@ function addIndividualDivs() {
         for (let i = 1; i <= mainContainerSide; i++) {
             let individualDiv = document.createElement('div');
             individualDiv.classList.add('individual-div');
-            individualDiv.setAttribute('onmouseenter', 'hover(this)')
+            individualDiv.setAttribute(paintMethod, 'hover(this)')
             rowDiv.appendChild(individualDiv);
         }
     })
@@ -70,7 +71,6 @@ gridSlider.addEventListener('input', () => {
 });
 
 // Change colour of hover with buttons
-
 let colourButtons = document.querySelectorAll(".colour-button");
 colourButtons.forEach( (button) => {
     button.style.backgroundColor = button.getAttribute('id');
@@ -78,3 +78,20 @@ colourButtons.forEach( (button) => {
         paintColour = e.target.id;
     })
 })
+
+// Change painting method with radio buttons
+let methodRadioButtons = document.querySelectorAll(".radio");
+methodRadioButtons.forEach( (radioButton) => {
+    radioButton.addEventListener( 'click', changePaintMethod)
+})
+
+function changePaintMethod(e) {
+    let individualDivs = document.querySelectorAll('.individual-div');
+    let priorPaintMethod = paintMethod;
+    paintMethod = e.target.value;
+
+    individualDivs.forEach( (div) => {
+        div.removeAttribute(priorPaintMethod);
+        div.setAttribute(paintMethod, "hover(this)")
+    } )
+}
