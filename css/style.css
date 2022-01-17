@@ -1,0 +1,20 @@
+#main-container {
+    border: 5px solid goldenrod;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.row-div,
+.individual-div {
+    box-sizing: border-box;
+}
+
+.row-div {
+    display: flex;
+}
+
+.individual-div {
+    border: 2px solid black;
+    height: 24px;
+    width: 24px;
+}
