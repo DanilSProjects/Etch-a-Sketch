@@ -18,12 +18,18 @@ function addIndividualDivs() {
         for (let i = 1; i <= mainContainerSide; i++) {
             let individualDiv = document.createElement('div');
             individualDiv.classList.add('individual-div');
+            individualDiv.setAttribute('onmouseenter', 'hover(this)')
             rowDiv.appendChild(individualDiv);
         }
     })
 }
 
-// Combines above functions to set up the main container
+// Turn divs black when moused over
+function hover(div) {
+    div.classList.add('activated');
+}
+
+// Set up the main container with the two div functions
 function setUpDivs() {
     addRowDivs();
     addIndividualDivs();
